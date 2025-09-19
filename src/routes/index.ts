@@ -1,11 +1,8 @@
-import { Router } from 'express';
+import { Router } from "express";
+import postRoutes from "./postRoutes";
+
 const router = Router();
 
-router.get('/', (_req, res) => res.json({ message: 'swag-cms-backend API' }));
-
-// mount route files (create them later)
-router.use('/auth', require('./auth').default);
-router.use('/users', require('./users').default);
-router.use('/posts', require('./posts').default);
+router.use("/posts", postRoutes);
 
 export default router;
